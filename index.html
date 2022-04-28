@@ -13,12 +13,24 @@
 <div class="container">
   <div class="main-content">
 <h1 class="pricing-title">Our pricing</h1>
-<div class="pricing-switch">switch</div>
+<form class="pricing-switch-form" action="https://htmlacademy.ru" method="GET">
+<div class="pricing-switch">
+  <input class="annual-switch-input visually-hidden" type="radio" name="payment-type" value="annual" id="payment-annual">
+  <input class="monthly-switch-input visually-hidden" type="radio" name="payment-type" value="monthly" id="payment-monthly" checked>
+  <label class="switch-label" for="payment-annual">Annually</label>
+  <div class="switch-controller">
+<div class="switch-circle"></div>
+<label class="switch-control-annual" for="payment-annual"></label>
+  <label class="switch-control-monthly" for="payment-monthly"></label>
+  </div>
+  <label class="switch-label" for="payment-monthly">Monthly</label>
+</div>
+</form>
 <section class="pricing-types-list">
-<div class="pricing-type">
+<div class="pricing-type" data-payment-annual="199.99" data-payment-monthly="19.99">
 <div class="pricing-type-inner">
 <h2 class="pricing-type-title">Basic</h2>
-<p class="pricingvalue"><span class="pricing-currency">$</span>19.99</p>
+<p class="pricingvalue"><span class="pricing-currency">$</span><span class="pricing-plan-value">19.99</span></p>
 <ul class="pricing-facilities-list">
   <li class="pricing-facilities-item">500GB Storage</li>
   <li class="pricing-facilities-item">2 Users Allowed</li>
@@ -28,10 +40,10 @@
 </div>
 </div>
 
-<div class="pricing-type pricing-type-main">
+<div class="pricing-type pricing-type-main" data-payment-annual="249.99" data-payment-monthly="24.99">
 <div class="pricing-type-inner">
 <h2 class="pricing-type-title">Professional</h2>
-<p class="pricingvalue"><span class="pricing-currency">$</span>24.99</p>
+<p class="pricingvalue"><span class="pricing-currency">$</span><span class="pricing-plan-value">24.99</span></p>
 <ul class="pricing-facilities-list">
   <li class="pricing-facilities-item">1TB Storage</li>
   <li class="pricing-facilities-item">5 Users Allowed</li>
@@ -41,10 +53,10 @@
 </div>
 </div>
 
-<div class="pricing-type">
+<div class="pricing-type" data-payment-annual="399.99" data-payment-monthly="39.99">
 <div class="pricing-type-inner">
 <h2 class="pricing-type-title">Master</h2>
-<p class="pricingvalue"><span class="pricing-currency">$</span>39.99</p>
+<p class="pricingvalue"><span class="pricing-currency">$</span><span class="pricing-plan-value">39.99</span></p>
 <ul class="pricing-facilities-list">
   <li class="pricing-facilities-item">2TB Storage</li>
   <li class="pricing-facilities-item">10 Users Allowed</li>

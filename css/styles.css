@@ -28,6 +28,11 @@ body {
   font-family: "Montserrat", "Arial", sans-serif;
   font-size: 15px;
   line-height: 28px;
+  background-image: url(../img/bg-top.svg),
+    url(../img/bg-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: top -100px right -100px,
+    left -120px bottom -457px;
   background-color: #F2F2F2;
   color: #6E728E;
 }
@@ -35,6 +40,16 @@ body {
 img {
   max-width: 100%;
   height: auto;
+}
+.visually-hidden{
+  position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
 }
 
 /* CONTAINER */
@@ -66,10 +81,65 @@ img {
   margin-top: 0;
   margin-bottom: 44px;
 }
-.pricing-switch {
-  text-align: center;
+.pricing-switch-form {
   margin-bottom: 61px;
 }
+.pricing-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.switch-label{
+  font-size: 15px;
+  line-height: 28px;
+  color: #6E728E;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.switch-label:hover{
+  opacity: 1;
+}
+.switch-controller {
+  width: 56px;
+  height: 32px;
+  border-radius: 16px;
+  margin-left: 24px;
+  margin-right: 24px;
+  background-color: #696EDD;
+  background-image: linear-gradient(135deg, #A2A7F0 0%, #696EDD 100%);
+  padding: 4px;
+  position: relative;
+}
+.switch-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: margin 0.3s ease;
+}
+.switch-control-annual{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.switch-control-monthly{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.annual-switch-input:checked ~ .switch-controller .switch-control-monthly,
+.monthly-switch-input:checked ~ .switch-controller .switch-control-annual {
+  z-index: 5;
+}
+.monthly-switch-input:checked ~ .switch-controller .switch-circle {
+  margin-left: 24px;
+}
+
 .pricing-types-list {
   display: flex;
   align-items: center;
@@ -176,4 +246,10 @@ img {
 }
 .pricing-type-main .pricingvalue{
   color: #fff;
+}
+.pricing-type-main .pricing-facilities-list{
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+.pricing-type-main .pricing-facilities-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
